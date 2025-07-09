@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google-font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'btn-color': '#E76F51',
+                        'primary-bg': 'rgba(231,111,81,0.1)',
+                    },
+                    fontFamily: {
+                        'lexend': ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="font-lexend">
+    <header>
+        <nav class="fixed top-0 z-50 w-full pb-4">
+            <div class="flex items-center justify-between bg-yellow-50  px-20 pb-10">
+                <a href="index.html"><button class="btn btn-primary bg-green-500 p-3">Home</button></a>
+                <div class="flex items-center space-x-2"><img id="logo" src="assets/logo.png" alt="">
+                    <h3 class="hidden md:block" id="site-name">Donate Bangladesh</h3>
+                </div>
+                <div class="flex items-center space-x-2"><img id="tk-icon" src="assets/coin.png" alt="">
+                    <h3 id="balance">5500 BDT</h3>
+                </div>
+            </div>
+            <div class="flex justify-center space-x-5 bg-white-30 pt-20 backdrop-blur-md pb-10">
+                <button class="btn btn-primary bg-green-500 p-3" id="donation">Donation</button>
+                <button class="btn btn-primary p-3" id="history">History</button>
+            </div>
+            <hr>
+        </nav>
+
+    </header>
+
+    <main class="px-20 flex flex-col space-y-4 md:px-96">
+        <div class="border rounded-md p-4 mt-[300px]">
+            <h1>96500 Taka is Donated for famine-2024 at Feni, Bangladesh</h1>
+            <time id="current-time"></time>
+        </div>
+        <div class="border rounded-md p-4">
+            <h1>6500 Taka is Donated for Flood Relief in Feni,Bangladesh</h1>
+            <time id="current-time"></time>
+        </div>
+        <div class="border rounded-md p-4">
+            <h1>15500 Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</h1>
+            <time id="current-time"></time>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/btnColorText.js"></script>
+</body>
+
+</html>
