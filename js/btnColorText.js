@@ -14,8 +14,7 @@ document.getElementById("donation").addEventListener("click", function () {
   document.querySelector("div#history-div").classList.add("hidden");
 });
 
-
-function handleDonation(inputId, balanceId) {
+function handleDonation(inputId, balanceId, location) {
   const inputText = document.getElementById(inputId).value;
   const amount = parseFloat(inputText);
 
@@ -42,23 +41,32 @@ function handleDonation(inputId, balanceId) {
 
   balanceElement.innerText = `${newBalance} BDT`;
   document.getElementById(inputId).value = "";
+
+  const historyDiv = document.getElementById('history-div');
+  const newDiv = document.createElement("div");
+  historyDiv.appendChild(newDiv);
+  newDiv.classList.add("border", "rounded-md", "p-4", "mt-2");
+  newDiv.innerHTML = `
+  <h1>${amount} Taka is Donated for Flood Relief at ${location}, Bangladesh</h1>
+            <time>${new Date().toLocaleString()}</time>
+  `;
+  historyDiv.prepend(newDiv);
 }
 
 document
   .getElementById("khulna-donation-btn")
   .addEventListener("click", function () {
-    handleDonation("khulna-donation-input", "balance");
+    handleDonation("khulna-donation-input", "balance", "Khulna");
   });
 
 document
   .getElementById("feni-donation-btn")
   .addEventListener("click", function () {
-    handleDonation("feni-donation-input", "balance");
+    handleDonation("feni-donation-input", "balance", "Feni");
   });
 
 document
   .getElementById("noakhali-donation-btn")
   .addEventListener("click", function () {
-    handleDonation("noakhali-donation-input", "balance");
+    handleDonation("noakhali-donation-input", "balance", "Noakhali");
   });
-
