@@ -52,9 +52,18 @@ function handleDonation(inputId, balanceId, location) {
   `;
   historyDiv.prepend(newDiv);
 
-  document.getElementById('confirmation-card').classList.remove('hidden');
+  const card = document.getElementById('confirmation-card')
+  card.classList.remove('hidden');
 
-  document.getElementById('bg-shadow').classList.remove('hidden')
+  setTimeout(() => {
+    card.classList.add('hidden');
+  }, 3000);
+
+  bgDark = document.getElementById('bg-shadow')
+  bgDark.classList.remove('hidden');
+  setTimeout(() => {
+    bgDark.classList.add("hidden");
+  }, 3000);
   
 }
 
@@ -75,3 +84,8 @@ document
   .addEventListener("click", function () {
     handleDonation("noakhali-donation-input", "balance", "Noakhali");
   });
+
+  document.getElementById('card-btn').addEventListener('click', function(){
+    document.getElementById("confirmation-card").classList.add('hidden');
+    document.getElementById("bg-shadow").classList.add('hidden');
+  })
