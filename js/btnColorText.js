@@ -51,6 +51,11 @@ function handleDonation(inputId, balanceId, location) {
             <time>${new Date().toLocaleString()}</time>
   `;
   historyDiv.prepend(newDiv);
+
+  document.getElementById('confirmation-card').classList.remove('hidden');
+
+  document.getElementById('bg-shadow').classList.remove('hidden')
+  
 }
 
 document
